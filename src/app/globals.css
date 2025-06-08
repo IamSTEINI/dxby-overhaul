@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'ExcludedFont';
+  src: url('./fonts/EXCLUDED.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  --background: #000000;
+  --foreground: #ededed;
+}
+
+
+
+[data-theme="light"] {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @theme inline {
@@ -12,15 +27,88 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*::-webkit-scrollbar {
+  width: 0;
 }
 
 body {
+  transition: background-color 0.3s ease, color 0.3s ease;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-user-drag: none;
+}
+
+button, input, textarea, select {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.link:hover {
+  filter: brightness(75%);
+}
+
+button {
+  cursor: pointer;
+}
+
+.e-font {
+  font-family: "ExcludedFont";
+}
+
+h1 {
+  font-size: clamp(16px, 20vw, 200px);
+  font-family: "ExcludedFont";
+  text-shadow: 2px 2px 4px rgba(43, 68, 100, 0.356);
+}
+
+
+.consolas {
+  font-family: "consolas" !important;
+}
+
+.floating {
+  animation: float 25s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(8px, -10px);
+  }
+  40% {
+    transform: translate(-6px, 5px);
+  }
+  60% {
+    transform: translate(-10px, -7px);
+  }
+  80% {
+    transform: translate(5px, 12px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-in-slow {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fade-in-fast {
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
