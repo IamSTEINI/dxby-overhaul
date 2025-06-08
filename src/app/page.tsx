@@ -4,7 +4,7 @@ import { Spotlight } from "./components/Spotlight";
 
 export default function Home() {
 	return (
-		<div className="absolute -top-0 w-screen h-screen select-none bg-grad overflow-hidden flex flex-row justify-center items-center">
+		<div className="absolute -top-0 pointer-events-none w-screen h-screen select-none bg-grad overflow-hidden flex flex-row justify-center items-center">
 			<Spotlight width={360}/>
 			<Image
 				src={"./LINES.svg"}
@@ -25,7 +25,7 @@ export default function Home() {
 				width={360}
 				height={300}
 				alt={"Vector 2"}
-				className="absolute left-32 -z-10 fade-in"
+				className="absolute left-32 mt-36 -z-10 fade-in"
 			/>
 			<Image
 				src={"./VEC3.svg"}

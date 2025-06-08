@@ -46,7 +46,7 @@ const NavBar: React.FC = () => {
     };
     
     return (
-        <div className="w-full h-14 z-[10000] flex flex-row gap-x-5 justify-center items-center">
+        <div className="w-full h-14 z-[999] flex flex-row gap-x-5 justify-center items-center">
             <MenuItem 
                 href="mailto:stein@dxby.dev" 
                 icon={<FaEnvelope />} 
