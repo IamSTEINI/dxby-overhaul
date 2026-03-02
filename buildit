@@ -1,0 +1,2 @@
+docker buildx build --platform linux/arm64 -t nextjs-standalone-image:latest --load .
+docker save -o nextjs-arm64.tar nextjs-standalone-image:latest

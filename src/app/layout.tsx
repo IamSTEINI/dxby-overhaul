@@ -1,17 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavBar from "./components/Navbar";
-
-const geistSans = Geist({
-	variable: "--font-geist-sans",
-	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
 	title: "D X B Y",
@@ -27,15 +15,14 @@ export default function RootLayout({
 		<html lang="en">
 			<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<NavBar />
+				className={`antialiased`}>
 				{children}
-				<div className="absolute bottom-5 select-none w-full flex flex-row justify-center gap-x-2 items-center opacity-50">
-					<a href="https://github.com/IamSTEINI/dxby-overhaul" className="link">
+				<div className="absolute bottom-5 select-none w-full flex flex-row justify-center gap-x-2 items-center">
+					<a href="https://github.com/IamSTEINI/dxby-overhaul">
 						Source code
 					</a>
 					{" · "}
-					<span>© 2025</span>
+					<span>© 2026</span>
 				</div>
 			</body>
 		</html>
